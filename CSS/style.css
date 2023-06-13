@@ -1,5 +1,8 @@
+/* mobile first costruito in base al layout mobile di larghezza 375px */
+
 :root {
   --gap-standard: 1rem;
+  --hero-bg-color: rgba(181, 221, 255, 255);
 }
 
 * {
@@ -28,12 +31,12 @@ nav svg {
 .hero-section {
   background-color: antiquewhite;   /* placeholder */
   width: 100%;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 .hero-container {
   background-color: aquamarine;   /* placeholder */
-  width: 90%;
+  width: 85%;
   margin: auto;
 }
 
@@ -42,13 +45,23 @@ nav svg {
   height: calc(100% / 2 - var(--gap-standard));
 }
 
-.col-xl {
-  background-color: rgba(181, 221, 255, 255);
-  border-radius: 25px;
+.col-xl .col:first-child {
+  
+  border-radius: 25px 25px 0 0;
 }
 
-.col img {
+.col-xl .col:last-child {
+  background-color: rgba(181, 221, 255, 255);
+  border-radius: 0 0 25px 25px;
+}
+
+.col img {        /* poi diventerà ".col-xl .col img" */
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.col {
+  background-color: var(--hero-bg-color);
+  border-radius: 25px;
 }
