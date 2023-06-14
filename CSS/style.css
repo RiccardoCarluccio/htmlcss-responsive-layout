@@ -1,8 +1,11 @@
-/* mobile first costruito in base al layout mobile di larghezza 375px */
+/* mobile first costruito per layout mobile di larghezza 375px */
 
 :root {
   --gap-standard: 1rem;
-  --hero-bg-color: rgba(181, 221, 255, 255);
+  --bg-hero-color: rgba(181, 221, 255, 255);        /* azzurro */
+  --titles-hero-color: rgba(0,132,253,255);         /* blu */
+  --paragraph-hero-color: rgba(102,125,144,255);    /* grigio */
+  --bg-main-color: rgba(151,146,228,255);           /* lilla */
 }
 
 * {
@@ -24,17 +27,13 @@ nav {
   padding: 1rem 1.5rem;
 }
 
-nav svg {
-  fill: white;
-}
-
 .hero-section {
   background-color: antiquewhite;   /* placeholder */
   width: 100%;
   padding: 3rem 0 5rem;
 }
 
-.hero-container {
+.container {
   background-color: aquamarine;   /* placeholder */
   width: 85%;   /* 83% sembra più preciso */
   margin: auto;
@@ -48,14 +47,22 @@ nav svg {
   gap: calc(var(--gap-standard) * 1.5);
 }
 
-.col-xl .col:first-child {
-  
+.col-xl .col:first-child {    /* probabilmente da settare la larghezza per motivi di responsiveness */
   border-radius: 25px 25px 0 0;
+  padding: 2rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .col-xl .col:last-child {
   background-color: rgba(181, 221, 255, 255);
   border-radius: 0 0 25px 25px;
+}
+
+.col {
+  background-color: var(--bg-hero-color);
+  border-radius: 25px;
 }
 
 .col img {        /* poi diventerà ".col-xl .col img" */
@@ -65,7 +72,28 @@ nav svg {
   margin-bottom: -3px;
 }
 
-.col {
-  background-color: var(--hero-bg-color);
-  border-radius: 25px;
+.col-xl .col h2,
+.col-xl .col p {
+  text-align: center;
+}
+
+.col-xl .col h2 {
+  color: var(--titles-hero-color);
+}
+
+.col-xl .col p {
+  color: var(--paragraph-hero-color);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.6rem;
+}
+
+.col-xl .col button {
+  background-color: var(--titles-hero-color);
+}
+
+/* Main */
+.main-container {
+  background-color: var(--bg-main-color);
+  width: 100%;
 }

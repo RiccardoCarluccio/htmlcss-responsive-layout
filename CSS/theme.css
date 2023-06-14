@@ -1,0 +1,13 @@
+/* colori SVG */
+.svg-white {
+  fill: white;
+}
+
+/* regole generali */
+button {
+  border: none;
+}
+
+button a {
+  text-decoration: none;
+}
